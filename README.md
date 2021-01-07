@@ -1,2 +1,5 @@
+![webstork logo](https://raw.githubusercontent.com/NexClipper/webstork/main/assets/stork_logo.png)
+
 # webstork
-Reserved reverse proxy for Cloud-native application monitoring
+Web tunnel for Cloud-native application monitoring
+
