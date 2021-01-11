@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: nc-promlens
+  name: nc-promlens
+  namespace: nex-system
+spec:
+  ports:
+  - port: 8080
+    name: promlens
+    protocol: TCP
+    targetPort: 8080
+  - port: 9201
+    nodePort: 
+    name: promscale
+    protocol: TCP
+    targetPort: 9201
+  selector:
+    name: webstork
+  type: ${EXPOSETYPE}
