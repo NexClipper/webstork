@@ -1,4 +1,5 @@
-FROM alpine:latest 
+FROM nginx:1.19.6-alpine
+#FROM alpine:latest 
 #alpine:3.12.3 - 2020.12.31
 LABEL maintainer="NexCloud Peter <peter@nexclipper.io>"
 
