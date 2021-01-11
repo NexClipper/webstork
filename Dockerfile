@@ -2,6 +2,7 @@ FROM alpine:latest
 #alpine:3.12.3 - 2020.12.31
 LABEL maintainer="NexCloud Peter <peter@nexclipper.io>"
 
+RUN echo "NexClipper"
 RUN apk add --no-cache --update curl
 
 ## KubeCTL Download ##
