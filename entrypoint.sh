@@ -1,5 +1,5 @@
 #!/bin/sh
-KUBENAMESPACE="nexclipper"
+KUBENAMESPACE="nex-system"
 PORTFORWARDLOG="/tmp/webstork_portforward.log"
 
 #TEST
