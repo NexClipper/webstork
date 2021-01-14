@@ -6,9 +6,8 @@ LABEL maintainer="NexCloud Peter <peter@nexclipper.io>"
 #### Default Setting
 ENV WKDIR=/data
 RUN mkdir -p $WKDIR
-RUN apk add --no-cache --update curl
+RUN apk add --no-cache --update curl apache2-utils
 COPY entrypoint.sh /entrypoint.sh
-COPY ./services $WKDIR/services
 
 ## KubeCTL Download ##
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl && \
