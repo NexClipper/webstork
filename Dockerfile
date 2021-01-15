@@ -5,7 +5,7 @@ LABEL maintainer="NexCloud Peter <peter@nexclipper.io>"
 
 #### Default Setting
 ENV WKDIR=/data
-RUN mkdir -p $WKDIR
+RUN mkdir -p $WKDIR && echo "Welcome to WebStork" >> /tmp/webstork_portforward.log
 RUN apk add --no-cache --update curl apache2-utils
 COPY entrypoint.sh /entrypoint.sh
 
