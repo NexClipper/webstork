@@ -11,5 +11,6 @@ spec:
     name: grafana
     protocol: TCP
     targetPort: 80
-  externalName: nc-grafana.nexclipper.svc.cluster.local
+  selector:
+    name: webstork
   type: ${EXPOSETYPE}
