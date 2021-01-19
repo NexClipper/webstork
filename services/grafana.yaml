@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    name: webstork-grafana
-  name: webstork-grafana
+    name: ws-grafana
+  name: ws-grafana
   namespace: nex-system
 spec:
   ports:
