@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    name: nc-pushgateway
-  name: nc-pushgateway
+    name: ws-pushgateway
+  name: ws-pushgateway
   namespace: nex-system
 spec:
   ports:
