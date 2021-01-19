@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    name: nc-grafana
-  name: nc-grafana
+    name: webstork-grafana
+  name: webstork-grafana
   namespace: nex-system
 spec:
   ports:
@@ -11,6 +11,5 @@ spec:
     name: grafana
     protocol: TCP
     targetPort: 80
-  selector:
-    name: webstork
+  externalName: nc-grafana.nexclipper.svc.cluster.local
   type: ${EXPOSETYPE}
