@@ -10,7 +10,7 @@ spec:
   - port: 8081
     name: alertmanager
     protocol: TCP
-    targetPort: 80
+    targetPort: 8081
   selector:
     name: webstork
   type: ${EXPOSETYPE}
