@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: ws-metricark
+  name: ws-metricark
+  namespace: nex-system
+spec:
+  ports:
+  - port: 8282
+    name: metricark
+    protocol: TCP
+    targetPort: 8282
+  selector:
+    name: webstork
+  type: ${EXPOSETYPE}
