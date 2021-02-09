@@ -26,7 +26,7 @@ kubectl port-forward --address 0.0.0.0 service/nc-grafana -n ${KUBENAMESPACE} 80
 >> $PORTFORWARDLOG 2>&1 &
 
 # MetricARK
-kubectl port-forward --address 0.0.0.0 service/metricark -n nex-system 8282:80 \
+kubectl port-forward --address 0.0.0.0 deployment/metricark -n nex-system 8282:80 \
 >> $PORTFORWARDLOG 2>&1 &
 
 tail -f $PORTFORWARDLOG
