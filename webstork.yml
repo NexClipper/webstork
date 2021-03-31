@@ -17,7 +17,7 @@ spec:
       serviceAccountName: nexc
       containers:
       - name: webstork
-        image: nexclipper/webstork:nginx-alpine-01
+        image: nexclipper/webstork:nginx-alpine
         #command: ['bash', '-c', '/entrypoint.sh']
         ports:
         - containerPort: 8081
