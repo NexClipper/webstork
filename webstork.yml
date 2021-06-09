@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: nex-system
+  name: webstork
+  labels:
+    name: webstork
+spec:
+  selector:
+    matchLabels:
+      name: webstork
+  template:
+    metadata:
+      labels:
+        name: webstork
+    spec:
+      serviceAccountName: nexc
+      containers:
+      - name: webstork
+        image: nexclipper/webstork:nginx-alpine
+        #command: ['bash', '-c', '/entrypoint.sh']
+        ports:
+        - containerPort: 8081
+        - containerPort: 80
+        - containerPort: 8282
+        - containerPort: 9000
+        - containerPort: 9090
+        - containerPort: 8080
+        - containerPort: 9201
+        - containerPort: 9091
+        - containerPort: 30003
