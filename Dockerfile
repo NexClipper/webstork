@@ -5,4 +5,5 @@ ENV WKDIR=/data
 #RUN rm -rf /etc/nginx
 RUN apk add --no-cache --update curl apache2-utils
 COPY ./nginx /etc/nginx
+COPY ./grafana/auth.html /usr/share/nginx/html
 #CMD ["nginx", "-g", "daemon off;"]
