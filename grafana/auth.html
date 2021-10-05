@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>NexClipper Grafana Auth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    Authorizing...
+  </div>
+
+  <script>
+jQuery(document).ready(function($) {
+    setTimeout(()=>{
+      setCookie("ncauth", getUrlVars()["ncauth"], 1);
+      window.location.href = '/';
+    }, 1000);
+});
+function setCookie(name,value,hour) {
+    var expires = "";
+    if (hour) {
+        var date = new Date();
+        date.setTime(date.getTime() + (hour*60*60*1000));
+        expires = ";expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + ";path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {
+    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+    
+function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+  </script>
+
+</body>
+</html>
